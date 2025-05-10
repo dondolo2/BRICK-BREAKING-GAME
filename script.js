@@ -186,7 +186,7 @@ function gameOverWin() {
 function gameOverLose() {
   if (ballPosition[1] <= 0) {
     clearInterval(timerId);
-    scoreDisplay.innerHTML = "You Lose";
+    scoreDisplay.innerHTML = "You Lost";
     document.removeEventListener("keydown", moveUser);
   }
 }
