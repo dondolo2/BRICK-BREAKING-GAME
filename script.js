@@ -5,6 +5,7 @@ const blockHeight = 20;
 const boardWidth = 560;
 const ballDiameter = 20;
 const boardHeight = 300;
+const blockPadding = 6; // smaller padding fits more
 
 let timerId;
 
@@ -29,26 +30,44 @@ class Block {
   }
 }
 
-// =============  ALL BLOCKS =============
+// =============  ALL BLOCKS (DYNAMICALLY GENERATED) =============
+const gridWidth = grid.offsetWidth; // width of the grid in px
+//const blockPadding = 10;
+const blockCols = Math.floor(
+  (gridWidth + blockPadding) / (blockWidth + blockPadding)
+);
+const blockRows = 3; // you can increase this number for more rows
 
-const blocks = [
-  new Block(10, 270),
-  new Block(120, 270),
-  new Block(230, 270),
-  new Block(340, 270),
-  new Block(450, 270),
-  new Block(10, 240),
-  new Block(120, 240),
-  new Block(230, 240),
-  new Block(340, 240),
-  new Block(450, 240),
-  new Block(10, 210),
-  new Block(120, 210),
-  new Block(230, 210),
-  new Block(340, 210),
-  new Block(450, 210),
-];
-console.log(blocks[0]);
+const blocks = [];
+
+for (let row = 0; row < blockRows; row++) {
+  for (let col = 0; col < blockCols; col++) {
+    const x = col * (blockWidth + blockPadding);
+    const y = 270 + row * (blockHeight + blockPadding); // top-down row layout
+    blocks.push(new Block(x, y));
+  }
+}
+
+// // =============  ALL BLOCKS =============
+
+// const blocks = [
+//   new Block(10, 270),
+//   new Block(120, 270),
+//   new Block(230, 270),
+//   new Block(340, 270),
+//   new Block(450, 270),
+//   new Block(10, 240),
+//   new Block(120, 240),
+//   new Block(230, 240),
+//   new Block(340, 240),
+//   new Block(450, 240),
+//   new Block(10, 210),
+//   new Block(120, 210),
+//   new Block(230, 210),
+//   new Block(340, 210),
+//   new Block(450, 210),
+// ];
+// console.log(blocks[0]);
 
 // ============= BLOCK DRAWING =============
 
@@ -209,3 +228,7 @@ function changeBallDirection() {
     return;
   }
 }
+
+document.getElementById("restart").addEventListener("click", () => {
+  location.reload(); // reloads the page to reset everything
+});
