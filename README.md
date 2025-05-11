@@ -13,7 +13,7 @@ A simple Breakout-style arcade game built using HTML, CSS, and JavaScript.
 
 ## Screenshot
 
-![Breakout Game Screenshot](assets/screenshot/screenshot.png)
+![Breakout Game Screenshot](assets/screenshots/screenshot.png)
 
 ## How to Play
 
