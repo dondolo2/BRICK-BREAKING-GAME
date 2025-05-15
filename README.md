@@ -24,13 +24,13 @@ A simple Breakout-style arcade game built using HTML, CSS, and JavaScript.
 
 ## Folder Structure
 
-├── assets/
-│ └── screenshot/
-│ └── screenshot.png
-├── index.html
-├── style.css
-├── script.js
-├── README.md
+├── assets/  
+│ └── screenshot/  
+│ └── screenshot.png  
+├── index.html  
+├── style.css  
+├── script.js  
+├── README.md  
 └── DEVELOPMENT-NOTES.md
 
 ## Development Notes
