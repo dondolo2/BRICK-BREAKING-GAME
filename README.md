@@ -40,3 +40,7 @@ Further improvements and ongoing work can be found in `DEVELOPMENT-NOTES.md`.
 ## License
 
 This project is for educational and personal use.
+
+---
+
+Made with 💛 by Musa Dondolo
